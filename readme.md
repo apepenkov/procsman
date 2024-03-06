@@ -1,36 +1,36 @@
-## ProcsManager
+# ProcsManager 🛠️
 
-ProcsManager is a simple tool to manage processes in a Linux/Windows environment.
+**ProcsManager** is a user-friendly tool designed for both Linux and Windows environments, perfect for managing your processes added via the web interface. It's not just about handling what's running on your server but bringing under control those specially added processes. Dive into management effortlessly with its Go-based backend and React-powered frontend.
 
-The backend is written in go, frontend in react.
+## Features 🌟
 
-## Features
-- A simple web interface to manage processes
-- Start, stop, restart, and kill processes
-- Configure environment variables, arguments, and working directory
-- View historical process CPU and memory usage
-- View logs of processes
-- Auto-restart processes on failure
-- Send notifications in telegram on process failure
-- Separate processes into groups (with inheritance of settings)
-- Both English and Russian languages are supported
-- Dark and light themes
-- Pin important processes to the top of the list
+- **Web Interface**: A straightforward web interface to oversee your processes.
+- **Process Management**: Start, stop, restart, and kill processes seamlessly.
+- **Configuration Flexibility**: Tweak environment variables, arguments, and the working directory to your needs.
+- **Monitoring**: Keep an eye on historical CPU and memory usage of all processes.
+- **Logging**: Access detailed logs for a clear overview of process activities.
+- **Resilience**: Auto-restart capabilities for processes that fail unexpectedly.
+- **Notifications**: Get Telegram alerts instantly on process failures.
+- **Grouping**: Organize your processes into groups for better management, with settings inheritance.
+- **Languages**: Supports both English and Russian, catering to diverse user bases.
+- **Themes**: Choose between dark and light modes for your visual comfort.
+- **Prioritization**: Pin the most critical processes to the top for quick access.
 
 <details>
-<summary>Click to see screenshots</summary>
+<summary>📸 Click to see screenshots</summary>
     Main view
     <img src="screenshots/main_view.png">
     Process view
     <img src="screenshots/process_view.png">
     Process edit
     <img src="screenshots/process_edit.png">
-    Card mode (targeted for mobile devices)
+    Card mode (perfect for mobile use)
     <img src="screenshots/card_mode.png">
 </details>
 
-## Installation
-Regardless of the method (docker or manual), you need to populate configuration files.
+## Installation 🛠️
+
+Before diving into the setup, make sure to edit the following configuration files:
 
 Here are the files you need to edit:
 1. `config.json` - main configuration file:
@@ -70,20 +70,20 @@ Here are the files you need to edit:
 }
 ```
 
-#### Updating source code:
+### Source Code Update 🔄
+Keep your application up-to-date with these simple commands:
 ```bash
 git pull
 git submodule update --init --recursive --remote
 # stop and remove old containers
 docker-compose down
 # delete old images of frontend and backend
-docker rmi procsman_frontend procsman_backend
+docker rmi procsman_docker-frontend procsman_docker-backend
 # rebuild and start new containers
 docker-compose up --build -d
 ```
 
-### Docker
-
+### Docker 🐳
 Is easier in installation (e.g. if you want to check it out), but you'll have to provide volumes for your processes.
 
 1. In `docker-compose.yml` in `backend` section: provide the volumes for whatever you want to run. For example, if you want to run a simple `ls` command, you can provide the volume like this:
@@ -103,7 +103,7 @@ Don't forget to change `REACT_APP_API_ENDPOINT` in docker-compose.yml -> fronten
 3. Get your key from `auth.json` and use it to log in.
 
 
-### Manual
+### Manual Setup 🛠️
 Dependencies:
 - Go 1.22+
 - Node.js 14+ with npm
@@ -145,4 +145,4 @@ cd ../front
 serve -s build -l 17466
 ```
 
-Done.
+**Enjoy seamless process management with ProcsManager! Your go-to solution for keeping things tidy and efficient.** 🚀
