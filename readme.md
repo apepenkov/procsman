@@ -16,6 +16,13 @@
 - **Themes**: Choose between dark and light modes for your visual comfort.
 - **Prioritization**: Pin the most critical processes to the top for quick access.
 
+## Cloning the Repository 📦
+You have to use `--recurse-submodules` flag to clone the repository, because it contains submodules. 
+```bash
+git clone --recurse-submodules
+````
+
+## Screenshots 📸
 <details>
 <summary>📸 Click to see screenshots</summary>
     Main view
