@@ -1,6 +1,8 @@
 [submodule "back"]
 	path = back
 	url = https://github.com/apepenkov/procsman_backend
+	branch = main
 [submodule "front"]
 	path = front
 	url = https://github.com/apepenkov/procsman_frontend
+	branch = main
