@@ -85,7 +85,7 @@ git submodule update --init --recursive --remote
 # stop and remove old containers
 docker-compose down
 # delete old images of frontend and backend
-docker rmi procsman_docker-frontend procsman_docker-backend
+docker rmi procsman-frontend procsman-backend
 # rebuild and start new containers
 docker-compose up --build -d
 ```
