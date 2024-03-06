@@ -1,0 +1,12 @@
+{
+  "auto_restart_on_stop": true,
+  "auto_restart_on_crash": true,
+  "auto_restart_max_retries": 3,
+  "auto_restart_max_retries_frame": 60,
+  "auto_restart_delay": 5000,
+  "notify_on_start": true,
+  "notify_on_stop": true,
+  "notify_on_crash": true,
+  "record_stats": true,
+  "store_logs": true
+}

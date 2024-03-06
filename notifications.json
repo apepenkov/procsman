@@ -1,0 +1,5 @@
+{
+  "enabled": true,
+  "telegram_bot_token": "",
+  "telegram_target_chat_ids": []
+}

@@ -1,0 +1,44 @@
+version: '3.8'
+
+services:
+  db:
+    image: postgres:latest
+    environment:
+      POSTGRES_USER: usernameChangeMe
+      POSTGRES_PASSWORD: passwordChangeMe
+      POSTGRES_DB: procsman
+    volumes:
+      - ./back/sqls/schema.sql:/docker-entrypoint-initdb.d/init.sql
+      - db-data:/var/lib/postgresql/data
+
+  backend:
+    build:
+      context: ./back
+      dockerfile: Dockerfile
+    volumes:
+      - ./auth.key:/app/auth.key
+      - ./config.json:/app/config.json
+      - ./default_process_config.json:/app/default_process_config.json
+      - ./notifications.json:/app/notifications.json
+      - ./backend_logs:/app/logs
+      - ./programs:/app/programs
+    ports:
+      - "54580:54580"
+    depends_on:
+      - db
+
+  frontend:
+    build:
+      args:
+        REACT_APP_API_ENDPOINT: "http://127.0.0.1:54580"
+      context: ./front
+      dockerfile: Dockerfile
+    ports:
+      - "17466:17466"
+    environment:
+      REACT_APP_API_ENDPOINT: "http://127.0.0.1:54580"
+    depends_on:
+      - backend
+
+volumes:
+  db-data:
