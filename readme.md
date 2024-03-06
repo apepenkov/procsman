@@ -116,7 +116,7 @@ Dependencies:
 - Node.js 14+ with npm
 - PostgreSQL 12+
 - serve (`npm install -g serve`)
-
+0. Copy .json configurations and auth.key into back/ folder (or make symlinks to them)
 1. Install frontend dependencies:
 ```bash
 cd front
