@@ -61,8 +61,6 @@ Here are the files you need to edit:
   "notify_on_start": true, // Send notification on process start
   "notify_on_stop": true, // Send notification on process stop
   "notify_on_crash": true, // Send notification on process crash
-  
-  // WIP, does not work at the moment!! All process logs and stats will be recorded regardless of this setting
   "record_stats": true, // Record process stats
   "store_logs": true // Store process logs
 }
